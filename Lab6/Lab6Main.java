@@ -1,3 +1,7 @@
+// Name: Althea Chen
+// AndrewId: yuquanch
+
+
 package Lab6;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -111,5 +115,20 @@ public class Lab6Main {
 
         } while (userChoice.equals("Y"));
 
+        int result = computeFibonacci(0,1,7);
+        System.out.println("Fibonacci #7 = " + result);
+
+    }
+
+
+    public static int computeFibonacci(int first, int second, int n){
+        if (n <= 0){
+            return first;
+        }
+
+        int next = first + second;
+        return computeFibonacci(second, next, n-1);
+
+        //System.out.println("Fibonacci #" + n + " = " + result);
     }
 }
