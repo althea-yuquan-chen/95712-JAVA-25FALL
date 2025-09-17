@@ -95,7 +95,7 @@ public class Lab6Main {
         //     return; // Exit the program
         // }
 
-        if (lab.openFile("Lab6/paPop.csv")){
+        if (lab.openFile("paPop.csv")){
             lab.createList();
         }
 
@@ -128,7 +128,5 @@ public class Lab6Main {
 
         int next = first + second;
         return computeFibonacci(second, next, n-1);
-
-        //System.out.println("Fibonacci #" + n + " = " + result);
     }
 }
