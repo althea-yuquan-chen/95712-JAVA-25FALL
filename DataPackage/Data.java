@@ -26,8 +26,12 @@ public class Data {
         this.iValue = d.iValue;
         this.sValue = d.sValue;
         this.iList = d.iList;
-        this.aList = d.aList;
-        this.containedClass  = d.containedClass;
+        //this.aList = d.aList; 
+        this.containedClass = d.containedClass;
+
+        // better to use deep copy
+        this.aList = new ArrayList<>(d.aList);
+        
     }
 
     @Override
@@ -55,13 +59,16 @@ public class Data {
     }
 
     // Should you copy a reference to an collection object?
+    // No, should use deep copy
     public void setaList(ArrayList<Integer> aList) {
-        this.aList = aList;
+        //this.aList = aList;
+        this.aList = new ArrayList<>(aList);
     }
 
     // Should you return a reference to a collection object?
     public ArrayList<Integer> getaList() {
-        return aList;
+        //return aList;
+        return new ArrayList<>(aList);
     }
 
     // Should you copy a reference to an object?

@@ -25,6 +25,7 @@ public class DataSnooper {
 
         // More Problem 1: is direct write access okay?
         // This would directly change the value in the memory, but not the copy of it, break the encapsulation of class Data
+        System.out.println();
         System.out.println("Change the simple data");
         d.setiValue(-1);
         d.setsValue("Dog");
@@ -43,6 +44,7 @@ public class DataSnooper {
         System.out.println(d.toString());
 
         // Problem 2: are arrays different than regular data?
+        System.out.println();
         System.out.println("Change the array");
         int[] mylist = {-1, -2, -3, -4, -5};
         d.setiList(mylist);
@@ -51,18 +53,28 @@ public class DataSnooper {
         // Change the local array mylist
         mylist[1] = 1000;
         // Now what's in d's int array named ilist?
+        // Remains the same, because we only change the local mylist, not the iList in Data class.
         System.out.println(d.toString());
 
         // Problem 3: is a Collection different than regular data?
+        System.out.println();
         System.out.println("Change the ArrayList");
         // What's in d's ArrayList?
         System.out.println(d.toString());
+        
+        // directly get the reference of the arraylist, which could break the encapsulation
         ArrayList<Integer> yourlist = d.getaList();
         yourlist.add(1000);
         // What's in d's ArrayList now?
         System.out.println(d.toString());
 
+        // instead, we could use a deep copy
+        ArrayList<Integer> copyArrayList = new ArrayList<>(d.getaList());
+        copyArrayList.add(1000);
+        System.out.println(d.toString());
+
         // Problem 4: is a contained class different than regular data?
+        System.out.println();
         System.out.println("Change the contained class");
         // What's in d's ContainedClass?
         System.out.println(d.toString());
