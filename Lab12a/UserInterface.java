@@ -35,7 +35,9 @@ public class UserInterface {
                     String patronName = input.nextLine();
                     System.out.print("Enter Patron ID: ");
                     int id = Integer.parseInt(input.nextLine());
-                    listOfPatrons.addPatron(new Patron(patronName, id));
+                    System.out.println("Enter Patron Type: ");
+                    String type = input.nextLine();
+                    listOfPatrons.addPatron(PatronFactory.createPatron(type, patronName, id));
                     break;
 
                 case 2:
