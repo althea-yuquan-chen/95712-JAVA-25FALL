@@ -1,0 +1,4 @@
+Memo,Meeting,We're having one,Alice,Bob
+TimedMemo,Raise,We're not getting one,Boss,Peon
+PoliteTimedMemo,Birthday,You're older than you've ever been,TMBG,Marty
+Memo,LabWeek81,This is a great lab!,Marty,You
